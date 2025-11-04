@@ -7,6 +7,11 @@ import streamlit as st
 
 load_dotenv()
 
+## Langsmith Tracking
+os.environ["LANGCHAIN_API_KEY"]=os.getenv("LANGCHAIN_API_KEY")
+os.environ["LANGCHAIN_TRACING_V2"]="true"
+os.environ["LANGCHAIN_PROJECT"]="Language Translation App using Groq and LLama3"
+
 groq_api_key=os.getenv("GROQ_API_KEY")
 model=ChatGroq(model="llama-3.1-8b-instant",groq_api_key=groq_api_key)
 
